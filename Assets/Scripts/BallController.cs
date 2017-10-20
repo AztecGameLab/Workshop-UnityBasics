@@ -12,4 +12,10 @@ public class BallController : MonoBehaviour {
         rigidbody.velocity = randomVelocity * 10;
     }
 	
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Reset")
+            transform.position = Vector3.zero;
+    }
+
 }
